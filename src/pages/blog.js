@@ -1,11 +1,17 @@
 import React from 'react';
+import { Link } from 'gatsby';
+
+import Header from '../components/header';
 
 const BlogPage = () => {
   return (
-    <div>
-      <h1>Blog</h1>
-      <p>Posts will go here</p>
-    </div>
+    <>
+      <Header />
+      <div>
+        <h1>Blog</h1>
+        <p>Posts will go here</p>
+      </div>
+    </>
   )
 }
 
