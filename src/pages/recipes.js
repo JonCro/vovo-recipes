@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Link } from 'gatsby';
 
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 const RecipesPage = () => {
   return (
@@ -10,6 +10,7 @@ const RecipesPage = () => {
       <div>
         <h1>Recipes</h1>
       </div>
+      <Footer />
     </>
   )
 }
