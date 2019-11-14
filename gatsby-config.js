@@ -5,6 +5,10 @@
  */
 
 module.exports = {
+  siteMetaData: {
+    title: `Vovo's Family Recipes`,
+    author: `Jon Cronin`
+  },
   plugins: [
     `gatsby-plugin-sass`
   ],
