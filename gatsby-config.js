@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  siteMetaData: {
+  siteMetadata: {
     title: `Vovo's Family Recipes`,
     author: `Jon Cronin`
   },
