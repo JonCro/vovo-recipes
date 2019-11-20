@@ -27,12 +27,14 @@ export const query = graphql`
 `
 
 const Recipes = (props) => {
-  {console.log(props.data.contentfulRecipes.tags)}
   return (
     <Layout>
       <Head title={props.data.contentfulRecipes.title} />
       <h1>{props.data.contentfulRecipes.title}</h1>
-      <p>{props.data.contentfulRecipes.date} | {props.data.contentfulRecipes.tags.forEach(tag => <span className={blogStyles.tags}>hi</span>)}</p>
+      <div className={blogStyles.meta}>
+        <span>{props.data.contentfulRecipes.date}</span>
+        {props.data.contentfulRecipes.tags.map(tag => <span className={blogStyles.tags}>{tag}</span>)}
+      </div>
       <h3>Ingredients</h3>
       <div>{documentToReactComponents(props.data.contentfulRecipes.ingredients.json)}</div>
       <h3>Instructions</h3>

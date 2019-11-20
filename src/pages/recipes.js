@@ -32,7 +32,7 @@ const RecipesPage = () => {
       <h1>Recipes</h1>
       <ol className={blogStyles.posts}>
           {data.allContentfulRecipes.edges.map(post => (
-            <li className={blogStyles.post}>
+            <li className={blogStyles.post} key={post.node.slug}>
               <Link to={`/recipes/${post.node.slug}`}>
                 <h2>{post.node.title}</h2>
                 <p>{post.node.date} ~ {post.node.tags}</p>
