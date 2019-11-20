@@ -18,7 +18,8 @@ const RecipesPage = () => {
           node {
             title,
             slug,
-            date(formatString:"MMMM Do, YYYY")
+            date(formatString:"MMMM Do, YYYY"),
+            tags
           }
         }
       }
@@ -34,7 +35,7 @@ const RecipesPage = () => {
             <li className={blogStyles.post}>
               <Link to={`/recipes/${post.node.slug}`}>
                 <h2>{post.node.title}</h2>
-                <p>{post.node.date}</p>
+                <p>{post.node.date} ~ {post.node.tags}</p>
               </Link>
             </li>
           ))}
