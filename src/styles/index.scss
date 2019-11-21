@@ -48,9 +48,7 @@ a {
 }
 a:active,
 a:hover {
-  color: #b4d;
-  outline-width: 3rem;
-  outline: orchid dashed 1px;
+  outline-width: 0;
 }
 abbr[title] {
   border-bottom: none;
