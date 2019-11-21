@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import blogStyles from './blog.module.scss';
+import recipesStyles from './recipes.module.scss';
 import Head from '../components/head'
 
 const RecipesPage = () => {
@@ -30,12 +30,12 @@ const RecipesPage = () => {
     <Layout>
       <Head title="Recipes" />
       <h1>Recipes</h1>
-      <ol className={blogStyles.posts}>
+      <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => (
-            <li className={blogStyles.post} key={post.node.slug}>
+            <li className={recipesStyles.card} key={post.node.slug}>
               <Link to={`/recipes/${post.node.slug}`}>
                 <h2>{post.node.title}</h2>
-                <p>{post.node.date} ~ {post.node.tags}</p>
+                <p>{post.node.date} <br /> {post.node.tags.map(tag => `tags: ${tag} `)}</p>
               </Link>
             </li>
           ))}
