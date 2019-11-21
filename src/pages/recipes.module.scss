@@ -1,0 +1,59 @@
+.recipes {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  width: 300px;
+  border: 1px solid #ececec;
+  margin: .4rem;
+  
+  a {
+    text-decoration: none;
+    background: #f4f4f4;
+    color: black;
+    display: block;
+    padding: 1rem;
+    width: 100%;
+
+    &:hover {
+      background: #e4e4e4;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0
+  }
+
+  p {
+    color: #777;
+    font-size: .8rem;
+    font-style: italic;
+  }
+
+  img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    margin: .8rem 0;
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.45rem;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.tags {
+  padding: 5px;
+  background: #f4fcf4;
+  color: black;
+  margin: 0 8px;
+  font-size: .8rem;
+}
