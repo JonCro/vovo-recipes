@@ -2,13 +2,14 @@
   list-style-type: none;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .card {
   display: flex;
   width: 300px;
   border: 1px solid #ececec;
-  margin: .4rem;
   
   a {
     text-decoration: none;
