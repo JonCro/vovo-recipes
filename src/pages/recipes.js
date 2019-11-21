@@ -19,7 +19,12 @@ const RecipesPage = () => {
             title,
             slug,
             date(formatString:"MMMM Do, YYYY"),
-            tags
+            tags,
+            image {
+              file {
+                url
+              }
+            }
           }
         }
       }
@@ -34,6 +39,7 @@ const RecipesPage = () => {
           {data.allContentfulRecipes.edges.map(post => (
             <li className={recipesStyles.card} key={post.node.slug}>
               <Link to={`/recipes/${post.node.slug}`}>
+                <img src={post.node.image.file.url} alt="" />
                 <h2>{post.node.title}</h2>
                 <p>{post.node.date} <br /> {post.node.tags.map(tag => `tags: ${tag} `)}</p>
               </Link>

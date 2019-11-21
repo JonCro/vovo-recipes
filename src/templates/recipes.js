@@ -21,6 +21,11 @@ export const query = graphql`
         },
         instructions {
           json
+        },
+        image {
+          file {
+            url
+          }
         }
     }
   }
@@ -31,6 +36,7 @@ const Recipes = (props) => {
     <Layout>
       <Head title={props.data.contentfulRecipes.title} />
       <h1>{props.data.contentfulRecipes.title}</h1>
+      <img src={props.data.contentfulRecipes.image.file.url} />
       <div className={blogStyles.meta}>
         <span>{props.data.contentfulRecipes.date}</span>
         {props.data.contentfulRecipes.tags.map(tag => <span className={blogStyles.tags}>{tag}</span>)}
