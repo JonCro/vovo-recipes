@@ -19,7 +19,7 @@
     transition: all .1s ease-in-out;
 
     &:hover {
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+      box-shadow: 0 .5rem 1rem rgba(20, 0, 60, 0.1);
     }
   }
 
@@ -41,10 +41,10 @@
     padding: 0;
   }
 
-  span {
-    color: #777;
-    font-size: .8rem;
+  p {
     font-style: italic;
+    font-size: .8rem;
+    margin-bottom: .1rem;
   }
 }
 
@@ -59,8 +59,12 @@
 
 .tags {
   padding: 5px;
-  background: #f4fcf4;
-  color: black;
-  margin: 0 8px;
-  font-size: .8rem;
+  background: var(--color-primary);
+  color: #fff;
+  margin: 0 4px;
+  font-size: .7rem;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
 }

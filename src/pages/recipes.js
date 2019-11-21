@@ -42,8 +42,10 @@ const RecipesPage = () => {
                 <img src={post.node.image.file.url} alt="" />
                 <h2>{post.node.title}</h2>
                 <div className={recipesStyles.cardMeta}>
-                  <span>{post.node.date}</span>
-                  <span>{post.node.tags.map(tag => `tags: ${tag} `)}</span>
+                  <p>{post.node.date}</p>
+                  <div>{post.node.tags.map(tag => 
+                  <span className={recipesStyles.tags}>{tag} </span>
+                  )}</div>
                 </div>
               </Link>
             </li>
