@@ -11,15 +11,14 @@ An app that shares my grandmothers recipes using Gatsby and Contentful.
 2. **Install**
    
     Install all dependencies.
-
     ```shell
     cd YOUR_DIRECTORY/vovo-recipe
     npm i
     ```
+
 3. **Start developing**
    
     Spin up the development server.
-
     ```
     npm run develop
     ```
