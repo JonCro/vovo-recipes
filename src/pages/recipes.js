@@ -10,8 +10,8 @@ const RecipesPage = () => {
     query {
       allContentfulRecipes (
         sort: {
-          fields:date,
-          order:DESC
+          fields: date,
+          order: DESC
         }
       ){
         edges {
