@@ -12,14 +12,14 @@
   
   a {
     text-decoration: none;
-    background: #f4f4f4;
     color: black;
     display: block;
     padding: 1rem;
     width: 100%;
+    transition: all .1s ease-in-out;
 
     &:hover {
-      background: #e4e4e4;
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
     }
   }
 
@@ -27,17 +27,24 @@
     margin-bottom: 0
   }
 
-  p {
-    color: #777;
-    font-size: .8rem;
-    font-style: italic;
-  }
-
   img {
     height: 150px;
     width: 100%;
     object-fit: cover;
     margin: .8rem 0;
+  }
+
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    margin: .8rem 0;
+    padding: 0;
+  }
+
+  span {
+    color: #777;
+    font-size: .8rem;
+    font-style: italic;
   }
 }
 
