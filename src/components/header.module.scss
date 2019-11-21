@@ -46,5 +46,12 @@
 }
 
 .active-nav-item {
-  color: rgba(255, 255, 255, .5);
+  background: #fff;
+  color: var(--color-primary);
+  border-bottom: 4px solid #fff;
+
+  &:hover,
+  &:focus {
+    color: #333;
+  }
 }
