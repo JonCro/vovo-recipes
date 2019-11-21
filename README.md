@@ -7,17 +7,19 @@ An app that shares my grandmothers recipes using Gatsby and Contentful.
 
 ## 🚀 Quick start
 
-1.  **Fork, clone or download the rep**
+1.  **Fork, clone or download this repo**
 2. **Install**
+3. 
     Install all dependencies.
 
     ```shell
     cd YOUR_DIRECTORY/vovo-recipe
     npm i
     ```
-3. **Start developing**
+4. **Start developing**
+5. 
     Spin up the development server.
-    
+
     ```
     npm run develop
     ```
