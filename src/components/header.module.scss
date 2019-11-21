@@ -1,11 +1,11 @@
 
 
 .header {
-  padding: 1rem;
+  padding: 1rem 1rem .4rem 1rem;
   background: var(--color-primary);
   
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -16,9 +16,10 @@
 
 .title {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-size: 2.25rem;
   margin-right: 2rem;
+  margin-left: .8rem;
 }
 
 .nav-list {
@@ -40,6 +41,7 @@
   &:hover,
   &:focus {
     color: rgba(255, 255, 255, .7);
+    border-bottom: 4px solid white;
   }
 }
 
