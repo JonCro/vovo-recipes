@@ -27,6 +27,13 @@ const RecipesPage = () => {
             }
           }
         }
+      },
+      allContentfulCategories {
+        edges{
+          node {
+            type
+          }
+        }
       }
     }
   `)
@@ -34,6 +41,16 @@ const RecipesPage = () => {
   return (
     <Layout>
       <Head title="Recipes" />
+      <nav>
+        <h3>Sort by category:</h3>
+        <ul>
+          {data.allContentfulCategories.edges.map(tags =>
+            (
+              <li>{tags.node.type}</li>
+            )
+          )}
+        </ul>
+      </nav>
       <h1>Recipes</h1>
       <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => 
