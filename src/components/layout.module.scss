@@ -1,10 +1,11 @@
 .container {
   margin: 0 auto;
   max-width: 968px;
-  padding: 3rem 1rem 1rem;
+  padding: 2rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 124px);
+  background: var(--color-bg);
 }
 
 .content {

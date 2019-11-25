@@ -3,13 +3,14 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card {
   display: flex;
   width: 300px;
   border: 1px solid #ececec;
+  background: #fff;
   
   a {
     text-decoration: none;
@@ -71,13 +72,12 @@
 }
 
 .categories-nav {
-  background: #eeeeff;
-  padding: 1rem;
+  padding: 1rem 0 1rem;
   margin-bottom: 1rem;
 
   h5 {
     margin: 0;
-    color: var(--color-primary);
+    color: rgba(0,0,0,.8);
   }
 }
 
