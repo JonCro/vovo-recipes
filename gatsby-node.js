@@ -24,7 +24,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  res.data.allContentfulBlogPost.edges.forEach((edge) => {
+  const blogPosts = res.data.allContentfulBlogPost.edges;
+  blogPosts.forEach((edge) => {
     createPage({
       component: blogTemplate,
       path: `/blog/${edge.node.slug}`,
@@ -34,12 +35,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  res.data.allContentfulRecipes.edges.forEach((edge) => {
+  const recipes = res.data.allContentfulRecipes.edges;
+  recipes.forEach(({node}) => {
     createPage({
       component: recipesTemplate,
-      path: `/recipes/${edge.node.slug}`,
+      path: `/recipes/${node.slug}`,
       context: {
-        slug: edge.node.slug
+        slug: node.slug
       }
     })
   })

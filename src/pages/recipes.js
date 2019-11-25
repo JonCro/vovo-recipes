@@ -18,7 +18,6 @@ const RecipesPage = () => {
           node {
             title,
             slug,
-            date(formatString:"MMMM Do, YYYY"),
             tags,
             image {
               file {
@@ -60,7 +59,6 @@ const RecipesPage = () => {
                 {post.node.image !== null ? <img src={post.node.image.file.url} alt="" /> : <p>no image</p>}
                 <h2>{post.node.title}</h2>
                 <div className={recipesStyles.cardMeta}>
-                  <p>{post.node.date}</p>
                   <div>{post.node.tags.map(tag => 
                   <span className={recipesStyles.tags}>{tag} </span>
                   )}</div>
