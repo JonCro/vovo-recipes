@@ -41,9 +41,9 @@ const RecipesPage = () => {
   return (
     <Layout>
       <Head title="Recipes" />
-      <nav>
-        <h3>Sort by category:</h3>
-        <ul>
+      <nav className={recipesStyles.categoriesNav}>
+        <h5>Sort by category</h5>
+        <ul className={recipesStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags =>
             (
               <li>{tags.node.type}</li>
