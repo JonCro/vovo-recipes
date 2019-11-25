@@ -38,7 +38,7 @@ const Recipes = (props) => {
       {props.data.contentfulRecipes.image !== null ? <img src={props.data.contentfulRecipes.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>
         <span className={blogStyles.tags}>categories</span>
-        {props.data.contentfulRecipes.tags.map(tag => <span className={blogStyles.tags}>{tag}</span>)}
+        {props.data.contentfulRecipes.tags.map(tag => <span className={blogStyles.tags} key={tag}>{tag}</span>)}
       </div>
       <h3>Ingredients</h3>
       <div>{documentToReactComponents(props.data.contentfulRecipes.ingredients.json)}</div>

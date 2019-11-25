@@ -23,14 +23,20 @@ const RecipesPage = () => {
               file {
                 url
               }
-            }
+            },
+            contentful_id
           }
         }
       },
       allContentfulCategories {
         edges{
           node {
-            type
+            type,
+            recipes {
+              title,
+              slug
+            },
+            contentful_id
           }
         }
       }
@@ -45,7 +51,7 @@ const RecipesPage = () => {
         <ul className={recipesStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags =>
             (
-              <li>{tags.node.type}</li>
+              <li key={tags.node.contentful_id}>{tags.node.type}</li>
             )
           )}
         </ul>
@@ -54,13 +60,13 @@ const RecipesPage = () => {
       <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => 
           (
-            <li className={recipesStyles.card} key={post.node.slug}>
+            <li className={recipesStyles.card} key={post.node.contentful_id}>
               <Link to={`/recipes/${post.node.slug}`}>
                 {post.node.image !== null ? <img src={post.node.image.file.url} alt="" /> : <p>no image</p>}
                 <h2>{post.node.title}</h2>
                 <div className={recipesStyles.cardMeta}>
                   <div>{post.node.tags.map(tag => 
-                  <span className={recipesStyles.tags}>{tag} </span>
+                  <span className={recipesStyles.tags} key={tag}>{tag} </span>
                   )}</div>
                 </div>
               </Link>

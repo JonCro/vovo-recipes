@@ -18,7 +18,8 @@ const BlogPage = () => {
           node {
             title,
             slug,
-            publishedDate(formatString:"MMMM Do, YYYY")
+            publishedDate(formatString:"MMMM Do, YYYY"),
+            contentful_id
           }
         }
       }
@@ -32,7 +33,7 @@ const BlogPage = () => {
         <h1>Blog</h1>
         <ol className={blogStyles.posts}>
           {data.allContentfulBlogPost.edges.map(post => (
-            <li className={blogStyles.post}>
+            <li className={blogStyles.post} key={post.node.contentful_id}>
               <Link to={`/blog/${post.node.slug}`}>
                 <h2>{post.node.title}</h2>
                 <p>{post.node.publishedDate}</p>
