@@ -1,0 +1,24 @@
+.categories-nav {
+  padding: 1rem 0 1rem;
+  margin-bottom: 1rem;
+
+  h5 {
+    margin: 0;
+    color: rgba(0,0,0,.8);
+  }
+}
+
+.categories-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+
+  li {
+    padding: .5rem 1rem 0 1rem;
+    margin: 0;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+}

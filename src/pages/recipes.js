@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import Submenu from '../components/submenu';
 import recipesStyles from './recipes.module.scss';
 import Head from '../components/head'
 
@@ -46,16 +47,7 @@ const RecipesPage = () => {
   return (
     <Layout>
       <Head title="Recipes" />
-      <nav className={recipesStyles.categoriesNav}>
-        <h5>Sort by category</h5>
-        <ul className={recipesStyles.categoriesList}>
-          {data.allContentfulCategories.edges.map(tags =>
-            (
-              <li key={tags.node.contentful_id}>{tags.node.type}</li>
-            )
-          )}
-        </ul>
-      </nav>
+      <Submenu />
       <h1>Recipes</h1>
       <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => 
