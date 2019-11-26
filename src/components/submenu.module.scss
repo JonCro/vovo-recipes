@@ -1,6 +1,11 @@
+.container {
+  margin: 0 auto;
+  max-width: 968px;
+  padding: .8rem 1rem;
+}
+
 .categories-nav {
-  padding: 1rem 0 1rem;
-  margin-bottom: 1rem;
+  background: linear-gradient(var(--color-bg), #fff);
 
   h5 {
     margin: 0;

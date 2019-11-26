@@ -23,14 +23,16 @@ const SubMenu = () => {
 
   return (
     <nav className={menuStyles.categoriesNav}>
-      <h5>Sort by category</h5>
-      <ul className={menuStyles.categoriesList}>
-        {data.allContentfulCategories.edges.map(tags =>
-          (
-            <li key={tags.node.contentful_id}>{tags.node.type}</li>
-          )
-        )}
-      </ul>
+      <div className={menuStyles.container}>
+        <h5>Sort by category</h5>
+        <ul className={menuStyles.categoriesList}>
+          {data.allContentfulCategories.edges.map(tags =>
+            (
+              <li key={tags.node.contentful_id}>{tags.node.type}</li>
+            )
+          )}
+        </ul>
+      </div>
     </nav>
   )
 }
