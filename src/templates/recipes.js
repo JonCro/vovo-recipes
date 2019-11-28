@@ -31,19 +31,21 @@ export const query = graphql`
 `
 
 const Recipes = (props) => {
+  const data = props.data.contentfulRecipes;
+
   return (
     <Layout>
-      <Head title={props.data.contentfulRecipes.title} />
-      <h1>{props.data.contentfulRecipes.title}</h1>
-      {props.data.contentfulRecipes.image !== null ? <img src={props.data.contentfulRecipes.image.file.url} alt="" /> : <p>no image</p>}
+      <Head title={data.title} />
+      <h1>{data.title}</h1>
+      {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>
         <span className={blogStyles.tags}>categories</span>
-        {props.data.contentfulRecipes.tags.map(tag => <span className={blogStyles.tags} key={tag}>{tag}</span>)}
+        {data.tags.map(tag => <span className={blogStyles.tags} key={tag}>{tag}</span>)}
       </div>
       <h3>Ingredients</h3>
-      <div>{documentToReactComponents(props.data.contentfulRecipes.ingredients.json)}</div>
+      <div>{documentToReactComponents(data.ingredients.json)}</div>
       <h3>Instructions</h3>
-      <div>{documentToReactComponents(props.data.contentfulRecipes.instructions.json)}</div>
+      <div>{documentToReactComponents(data.instructions.json)}</div>
     </Layout>
   )
 }

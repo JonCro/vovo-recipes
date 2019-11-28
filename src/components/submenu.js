@@ -10,6 +10,7 @@ const SubMenu = () => {
         edges{
           node {
             type,
+            slug,
             recipes {
               title,
               slug
@@ -28,7 +29,7 @@ const SubMenu = () => {
         <ul className={menuStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags =>
             (
-              <li key={tags.node.contentful_id}>{tags.node.type}</li>
+              <Link to={`/tags/${tags.node.slug}`}><li key={tags.node.contentful_id}>{tags.node.type}</li></Link>
             )
           )}
         </ul>
