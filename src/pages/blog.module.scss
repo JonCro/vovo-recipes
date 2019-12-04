@@ -36,6 +36,10 @@
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  
+  a {
+    text-decoration: none;
+  }
 }
 
 .tags {
@@ -44,4 +48,18 @@
   color: black;
   margin: 0 8px;
   font-size: .8rem;
+}
+
+.tag {
+  padding: .5rem;
+  margin: 0 .25rem;
+  color: #fff;
+  background: var(--color-primary);
+  font-size: .8rem;
+  border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    background: #333;
+  }
 }

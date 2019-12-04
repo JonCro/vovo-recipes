@@ -36,17 +36,17 @@ export const query = graphql`
 
 const Recipes = (props) => {
   const data = props.data.contentfulRecipes;
-  // console.log(data)
+  console.log(data)
   return (
     <Layout>
       <Head title={`${data.title}`} recipe={true} />
       <h1>{data.title}</h1>
       {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>
-        <span className={blogStyles.tags}>categories</span>
-        {/* {data.map((data, i) => (
-          <Link to={`/tags/${data.categories[i].slug}`}><span className={blogStyles.tags}>{data.tags[i]}</span></Link>
-          ))} */}
+        <span className={blogStyles.tags}>tags</span>
+        {data.categories.map((data) => (
+          <Link to={`/recipes/tags/${data.slug}`}><span className={blogStyles.tag}>{data.type}</span></Link>
+        ))}
       </div>
       <h3>Ingredients</h3>
       <div>{documentToReactComponents(data.ingredients.json)}</div>

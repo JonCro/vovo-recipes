@@ -8,8 +8,6 @@ import '../styles/index.scss';
 import layoutStyles from './layout.module.scss';
 
 const Layout = (props) => {
-  console.log('LAYOUT LOG =======', props)
-
   return (
     <>
       <Header />
