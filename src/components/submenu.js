@@ -6,7 +6,12 @@ import menuStyles from './submenu.module.scss';
 const SubMenu = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulCategories {
+      allContentfulCategories (
+        sort: {
+          fields: slug,
+          order: ASC
+        }
+      ) {
         edges{
           node {
             type,
@@ -25,7 +30,7 @@ const SubMenu = () => {
   return (
     <nav className={menuStyles.categoriesNav}>
       <div className={menuStyles.container}>
-        <h5>Sort by category</h5>
+        <h5>Tags</h5>
         <ul className={menuStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags =>
             (
