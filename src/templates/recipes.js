@@ -39,7 +39,7 @@ const Recipes = (props) => {
   // console.log(data)
   return (
     <Layout>
-      <Head title={`${data.title} | Vovo's Family Recipes`} recipe={true} />
+      <Head title={`${data.title}`} recipe={true} />
       <h1>{data.title}</h1>
       {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>

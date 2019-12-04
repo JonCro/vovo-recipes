@@ -45,7 +45,7 @@ const RecipesPage = () => {
 
   return (
     <Layout>
-      <Head title={`${data.title} | Vovo's Family Recipes`} recipe={true} />
+      <Head title={`Recipes`} recipe={true} />
       <h1>Recipes</h1>
       <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => 

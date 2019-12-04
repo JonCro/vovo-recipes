@@ -45,7 +45,7 @@ const tags = (props) => {
 
   return (
     <Layout>
-      <Head title={`${data.type} | Vovo's Family Recipes`} recipe={true} />
+      <Head title={`${data.type}`} recipe={true} />
       <h1>{data.type}</h1>
       <ol>
         {data.recipes.map(recipe => <Link to={`/recipes/${recipe.slug}`}><li>{recipe.title}</li></Link> )}
