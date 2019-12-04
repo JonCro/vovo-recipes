@@ -27,18 +27,6 @@ const RecipesPage = () => {
             contentful_id
           }
         }
-      },
-      allContentfulCategories {
-        edges{
-          node {
-            type,
-            recipes {
-              title,
-              slug
-            },
-            contentful_id
-          }
-        }
       }
     }
   `)
