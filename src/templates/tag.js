@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Layout from '../components/layout';
 import Submenu from '../components/submenu';
-import blogStyles from '../pages/blog.module.scss';
+import recipesStyles from '../pages/recipes.module.scss';
 import Head from '../components/head';
 
 
@@ -40,15 +40,25 @@ export const query = graphql`
 
 const tags = (props) => {
   const data = props.data.contentfulCategories;
-  
-  console.log(data)
 
   return (
     <Layout>
-      <Head title={`${data.type}`} recipe={true} />
-      <h1>{data.type}</h1>
-      <ol>
-        {data.recipes.map(recipe => <Link to={`/recipes/${recipe.slug}`}><li>{recipe.title}</li></Link> )}
+      <Head title={`Recipes - ${data.type}`} recipe={true} />
+      <h1>Recipes - {data.type}</h1>
+      <ol className={recipesStyles.recipes}>
+        {data.recipes.map(recipe => (
+          <li className={recipesStyles.card} >
+            <Link to={`/recipes/${recipe.slug}`}>
+              {recipe.image !== null ? <img src={recipe.image.file.url} alt="" /> : <p>no image</p>}
+              <h2>{recipe.title}</h2>
+              <div className={recipesStyles.cardMeta}>
+                <div>{recipe.tags.map(tag => 
+                <span className={recipesStyles.tags} key={tag}>{tag} </span>
+                )}</div>
+              </div>
+            </Link>
+          </li>
+        ))}
       </ol>
     </Layout>
   )
