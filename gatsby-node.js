@@ -64,7 +64,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   tags.forEach(({ node }) => {
     createPage({
       component: tagTemplate,
-      path: `/tags/${node.slug}`,
+      path: `/recipes/tags/${node.slug}`,
       context: {
         slug: node.slug,
         jon: true

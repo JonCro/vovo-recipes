@@ -36,10 +36,10 @@ export const query = graphql`
 
 const Recipes = (props) => {
   const data = props.data.contentfulRecipes;
-  console.log(data)
+  // console.log(data)
   return (
     <Layout>
-      <Head title={data.title} />
+      <Head title={`${data.title} | Vovo's Family Recipes`} recipe={true} />
       <h1>{data.title}</h1>
       {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>

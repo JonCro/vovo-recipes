@@ -8,10 +8,12 @@ import '../styles/index.scss';
 import layoutStyles from './layout.module.scss';
 
 const Layout = (props) => {
+  console.log('LAYOUT LOG =======', props)
+
   return (
     <>
       <Header />
-      {props.children[0].props.title === 'Recipes' ? <Submenu /> : null}
+      {props.children[0].props.recipe === true ? <Submenu /> : null}
       <div className={layoutStyles.container}>
         <div className={layoutStyles.content}>
           {props.children}

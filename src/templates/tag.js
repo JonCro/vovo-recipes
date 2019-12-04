@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
+import Submenu from '../components/submenu';
 import blogStyles from '../pages/blog.module.scss';
 import Head from '../components/head';
 
@@ -44,7 +45,7 @@ const tags = (props) => {
 
   return (
     <Layout>
-    <Head title={`${data.type} | Vovo's Family Recipes`} />
+      <Head title={`${data.type} | Vovo's Family Recipes`} recipe={true} />
       <h1>{data.type}</h1>
       <ol>
         {data.recipes.map(recipe => <Link to={`/recipes/${recipe.slug}`}><li>{recipe.title}</li></Link> )}

@@ -29,7 +29,7 @@ const SubMenu = () => {
         <ul className={menuStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags =>
             (
-              <Link to={`/tags/${tags.node.slug}`}><li key={tags.node.contentful_id}>{tags.node.type}</li></Link>
+              <Link to={`/recipes/tags/${tags.node.slug}`}><li key={tags.node.contentful_id}>{tags.node.type}</li></Link>
             )
           )}
         </ul>
