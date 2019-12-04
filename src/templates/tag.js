@@ -1,6 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+import Layout from '../components/layout';
+import blogStyles from '../pages/blog.module.scss';
+import Head from '../components/head';
 
 
 export const query = graphql`
@@ -14,7 +18,19 @@ export const query = graphql`
       slug,
       recipes {
         title,
-        slug
+        slug,
+        tags,
+        ingredients {
+          json
+        },
+        instructions {
+          json
+        },
+        image {
+          file {
+            url
+          }
+        }
       },
       contentful_id
     }
@@ -27,12 +43,13 @@ const tags = (props) => {
   console.log(data)
 
   return (
-    <>
+    <Layout>
+    <Head title={`${data.type} | Vovo's Family Recipes`} />
       <h1>{data.type}</h1>
       <ol>
-        {data.recipes.map(recipe => <li>{recipe.title}</li> )}
+        {data.recipes.map(recipe => <Link to={`/recipes/${recipe.slug}`}><li>{recipe.title}</li></Link> )}
       </ol>
-    </>
+    </Layout>
   )
 }
 

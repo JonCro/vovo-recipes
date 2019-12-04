@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
@@ -15,6 +15,10 @@ export const query = graphql`
     ) {
         title,
         tags,
+        categories {
+          type,
+          slug
+        },
         ingredients {
           json
         },
@@ -32,7 +36,7 @@ export const query = graphql`
 
 const Recipes = (props) => {
   const data = props.data.contentfulRecipes;
-
+  console.log(data)
   return (
     <Layout>
       <Head title={data.title} />
@@ -40,7 +44,9 @@ const Recipes = (props) => {
       {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>
         <span className={blogStyles.tags}>categories</span>
-        {data.tags.map(tag => <span className={blogStyles.tags} key={tag}>{tag}</span>)}
+        {/* {data.map((data, i) => (
+          <Link to={`/tags/${data.categories[i].slug}`}><span className={blogStyles.tags}>{data.tags[i]}</span></Link>
+          ))} */}
       </div>
       <h3>Ingredients</h3>
       <div>{documentToReactComponents(data.ingredients.json)}</div>
