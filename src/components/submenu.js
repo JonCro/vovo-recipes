@@ -32,11 +32,12 @@ const SubMenu = () => {
       <div className={menuStyles.container}>
         <h5>Tags</h5>
         <ul className={menuStyles.categoriesList}>
-          {data.allContentfulCategories.edges.map(tags =>
-            (
-              <Link to={`/recipes/tags/${tags.node.slug}`}><li key={tags.node.contentful_id}>{tags.node.type}</li></Link>
-            )
-          )}
+          {data.allContentfulCategories.edges.map(tags => {
+            console.log(tags.node.contentful_id)
+            return (
+              <Link to={`/recipes/tags/${tags.node.slug}`} key={tags.node.contentful_id}><li>{tags.node.type}</li></Link>
+            ) 
+          })}
         </ul>
       </div>
     </nav>

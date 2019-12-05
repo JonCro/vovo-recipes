@@ -45,9 +45,11 @@ const Recipes = (props) => {
       {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
       <div className={blogStyles.meta}>
         <span className={blogStyles.tags}>tags</span>
-        {data.categories.map((data) => (
-          <Link to={`/recipes/tags/${data.slug}`}><span className={blogStyles.tag}>{data.type}</span></Link>
-        ))}
+        {data.categories.map((data) => {
+          return (
+            <Link to={`/recipes/tags/${data.slug}`}><span className={blogStyles.tag}>{data.type}</span></Link>
+          )
+        })}
       </div>
       <h3>Ingredients</h3>
       <div>{documentToReactComponents(data.ingredients.json)}</div>
