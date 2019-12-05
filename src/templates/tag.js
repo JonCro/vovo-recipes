@@ -1,9 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout';
-import Submenu from '../components/submenu';
 import recipesStyles from '../pages/recipes.module.scss';
 import Head from '../components/head';
 
