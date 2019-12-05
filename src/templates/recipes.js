@@ -36,6 +36,7 @@ export const query = graphql`
 
 const Recipes = (props) => {
   const data = props.data.contentfulRecipes;
+  console.log('recipes template')
   console.log(data)
   return (
     <Layout>

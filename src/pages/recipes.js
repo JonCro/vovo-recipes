@@ -31,6 +31,10 @@ const RecipesPage = () => {
     }
   `)
 
+  
+  console.log('recipes page')
+  console.log(data)
+
   return (
     <Layout>
       <Head title={`Recipes`} recipe={true} />

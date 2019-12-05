@@ -29,7 +29,8 @@ export const query = graphql`
           file {
             url
           }
-        }
+        },
+        contentful_id,
       },
       contentful_id
     }
@@ -38,6 +39,8 @@ export const query = graphql`
 
 const tags = (props) => {
   const data = props.data.contentfulCategories;
+  console.log('tags template')
+  console.log(data)
 
   return (
     <Layout>
