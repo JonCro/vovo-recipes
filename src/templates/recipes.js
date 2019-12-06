@@ -47,7 +47,7 @@ const Recipes = (props) => {
         <span className={blogStyles.tags}>tags</span>
         {data.categories.map((data) => {
           return (
-            <Link to={`/recipes/tags/${data.slug}`}><span className={blogStyles.tag}>{data.type}</span></Link>
+            <Link to={`/recipes/tags/${data.slug}`} ><span className={blogStyles.tag}>{data.type}</span></Link>
           )
         })}
       </div>

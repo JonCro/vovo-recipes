@@ -12,8 +12,8 @@ const RecipesPage = () => {
         sort: {
           fields: date,
           order: DESC
-        }
-      ){
+        })
+        {
         edges {
           node {
             title,

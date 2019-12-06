@@ -53,9 +53,11 @@ const tags = (props) => {
               {recipe.image !== null ? <img src={recipe.image.file.url} alt="" /> : <p>no image</p>}
               <h2>{recipe.title}</h2>
               <div className={recipesStyles.cardMeta}>
-                <div>{recipe.tags.map(tag => 
-                <span className={recipesStyles.tags} key={tag}>{tag} </span>
-                )}</div>
+                <div>
+                  {recipe.tags.map(tag => 
+                  <span className={recipesStyles.tags} key={tag}>{tag} </span>
+                  )}
+                </div>
               </div>
             </Link>
           </li>
