@@ -49,7 +49,7 @@ const IndexPage = (props) => {
                 if (i < 3) {
                   return (
                     <li className={recipesStyles.card} >
-                      <Link to={`/recipes/${recipe.slug}`}>
+                      <Link to={`/recipes/${recipe.node.slug}`}>
                       {recipe.node.image !== null ? <img src={recipe.node.image.file.url} alt="" /> : <p>no image</p>}
                         <h2>{recipe.node.title}</h2>
                         <div className={recipesStyles.cardMeta}>
