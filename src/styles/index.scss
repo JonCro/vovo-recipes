@@ -1,7 +1,7 @@
 // Variables
 :root {
   //colors
-  --color-primary: rgb(68, 0, 255);
+  --color-primary:#cc0000;
   --color-bg: #eeeeff;
 }
 
@@ -49,13 +49,15 @@ template {
   display: none;
 }
 a {
-  color: #666;
+  color: var(--color-primary);
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: none;

@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
+import indexStyles from './index.module.scss';
 import recipesStyles from '../pages/recipes.module.scss';
 import Head from '../components/head'
 
@@ -38,9 +39,8 @@ const IndexPage = (props) => {
     <Layout>
       <Head title="Home" />
       <div>
-        <h1>Vovo's Family Recipes</h1>
-        <h2>Meals to feed your family for generations</h2>
-        <div>
+        <h1 className={indexStyles.tagline}>Meals to feed your family for generations</h1>
+        <section>
           <h3>Most Recent Recipes</h3>
           <ol className={recipesStyles.recipes}>
             {
@@ -65,7 +65,7 @@ const IndexPage = (props) => {
               })
             }
           </ol>
-        </div>
+        </section>
         <p>Check out all of our <Link to="/recipes">recipes</Link>.</p>
       </div>
     </Layout>
