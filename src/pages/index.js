@@ -61,7 +61,7 @@ const IndexPage = (props) => {
                       </Link>
                     </li>
                   )
-                }
+                } return null
               })
             }
           </ol>
