@@ -18,7 +18,8 @@ export const query = graphql`
       tags,
       categories {
         type,
-        slug
+        slug,
+        contentful_id
       },
       ingredients {
         json
@@ -48,8 +49,9 @@ const Recipes = (props) => {
       <div className={recipeStyles.meta}>
         <span className={recipeStyles.tags}>tags</span>
         {data.categories.map((data, i) => {
+          console.log(data);
           return (
-            <Link to={`/recipes/tags/${data.slug}`} ><span className={recipeStyles.tag}>{data.type}</span></Link>
+            <Link to={`/recipes/tags/${data.slug}`} key={data.contentful_id}><span className={recipeStyles.tag}>{data.type}</span></Link>
           )
         })}
       </div>
