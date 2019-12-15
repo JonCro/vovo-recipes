@@ -47,7 +47,7 @@ const IndexPage = (props) => {
               recipes.map((recipe, i) => {
                 if (i < 3) {
                   return (
-                    <li className={recipesStyles.card} >
+                    <li className={recipesStyles.card} key={recipe.node.contentful_id}>
                       <Link to={`/recipes/${recipe.node.slug}`}>
                       {recipe.node.image !== null ? <img src={recipe.node.image.file.url} alt="" /> : <p>no image</p>}
                         <h2>{recipe.node.title}</h2>
