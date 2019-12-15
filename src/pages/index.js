@@ -40,7 +40,6 @@ const IndexPage = (props) => {
       <div>
         <h1>Vovo's Family Recipes</h1>
         <h2>Meals to feed your family for generations</h2>
-        <p>Check out all our <Link to="/recipes">recipes</Link></p>
         <div>
           <h3>Most Recent Recipes</h3>
           <ol className={recipesStyles.recipes}>
@@ -67,6 +66,7 @@ const IndexPage = (props) => {
             }
           </ol>
         </div>
+        <p>Check out all of our <Link to="/recipes">recipes</Link>.</p>
       </div>
     </Layout>
   )

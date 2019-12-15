@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import blogStyles from './blog.module.scss';
+import blogStyles from './recipe.module.scss';
 import Head from '../components/head'
 
 const BlogPage = () => {
