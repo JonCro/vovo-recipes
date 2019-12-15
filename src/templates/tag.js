@@ -47,8 +47,8 @@ const tags = (props) => {
       <Head title={`Recipes - ${data.type}`} recipe={true} />
       <h1>Recipes - {data.type}</h1>
       <ol className={recipesStyles.recipes}>
-        {data.recipes.map(recipe => (
-          <li className={recipesStyles.card} >
+        {data.recipes.map(recipe =>  (
+          <li className={recipesStyles.card} key={recipe.contentful_id}>
             <Link to={`/recipes/${recipe.slug}`}>
               {recipe.image !== null ? <img src={recipe.image.file.url} alt="" /> : <p>no image</p>}
               <h2>{recipe.title}</h2>
