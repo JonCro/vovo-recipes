@@ -4,7 +4,8 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
 import indexStyles from './index.module.scss';
 import recipesStyles from '../pages/recipes.module.scss';
-import Head from '../components/head'
+import Head from '../components/head';
+import Card from '../components/card';
 
 
 export const query = graphql`
@@ -47,19 +48,13 @@ const IndexPage = (props) => {
               recipes.map((recipe, i) => {
                 if (i < 3) {
                   return (
-                    <li className={recipesStyles.card} key={recipe.node.contentful_id}>
-                      <Link to={`/recipes/${recipe.node.slug}`}>
-                      {recipe.node.image !== null ? <img src={recipe.node.image.file.url} alt="" /> : <p>no image</p>}
-                        <h2>{recipe.node.title}</h2>
-                        <div className={recipesStyles.cardMeta}>
-                          <div>
-                            {recipe.node.tags.map(tag => 
-                            <span className={recipesStyles.tags} key={tag}>{tag} </span>
-                            )}
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
+                    <Card 
+                      image={recipe.node.image}
+                      title={recipe.node.title} 
+                      tags={recipe.node.tags}
+                      slug={recipe.node.slug}
+                      id={recipe.node.contentful_id}
+                      />
                   )
                 } return null
               })
