@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import recipesStyles from '../pages/recipes.module.scss';
+import recipesStyles from './card.module.scss';
 
 const Card = ({
   image,
