@@ -1,9 +1,10 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import recipesStyles from '../pages/recipes.module.scss';
 import Head from '../components/head';
+import Card from '../components/card';
+import recipesStyles from '../pages/recipes.module.scss';
 
 
 export const query = graphql`
@@ -47,20 +48,16 @@ const tags = (props) => {
       <Head title={`Recipes - ${data.type}`} recipe={true} />
       <h1>Recipes - {data.type}</h1>
       <ol className={recipesStyles.recipes}>
-        {data.recipes.map(recipe =>  (
-          <li className={recipesStyles.card} key={recipe.contentful_id}>
-            <Link to={`/recipes/${recipe.slug}`}>
-              {recipe.image !== null ? <img src={recipe.image.file.url} alt="" /> : <p>no image</p>}
-              <h2>{recipe.title}</h2>
-              <div className={recipesStyles.cardMeta}>
-                <div>
-                  {recipe.tags.map(tag => 
-                  <span className={recipesStyles.tags} key={tag}>{tag} </span>
-                  )}
-                </div>
-              </div>
-            </Link>
-          </li>
+        {data.recipes.map(recipe =>  
+        (
+          <Card 
+            image={recipe.image}
+            title={recipe.title} 
+            tags={recipe.tags}
+            slug={recipe.slug}
+            id={recipe.contentful_id}
+            path={`recipes`}
+          />
         ))}
       </ol>
     </Layout>
