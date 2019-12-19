@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import recipesStyles from './card.module.scss';
+import cardStyles from './card.module.scss';
 
 const Card = ({
   image,
@@ -12,13 +12,13 @@ const Card = ({
   path
   }) => {
     return (
-      <li className={recipesStyles.card}>
+      <li className={cardStyles.card}>
         <Link to={`/${path}/${slug}`}>
           {image !== null ? <img src={image.file.url} alt="" /> : <p>no image</p>}
           <h2>{title}</h2>
-          <div className={recipesStyles.cardMeta}>
+          <div className={cardStyles.cardMeta}>
             <div>{tags.map(tag => 
-            <span className={recipesStyles.tags} key={tag}>{tag} </span>
+            <span className={cardStyles.tags} key={tag}>{tag} </span>
             )}</div>
           </div>
         </Link>
