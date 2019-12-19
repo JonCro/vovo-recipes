@@ -43,7 +43,7 @@ const IndexPage = (props) => {
         <h1 className={indexStyles.tagline}>Meals to feed your family for generations</h1>
         <section>
           <h3>Most Recent Recipes</h3>
-          <ol className={recipesStyles.recipes}>
+          <ol className={recipesStyles.cardList}>
             {
               recipes.map((recipe, i) => {
                 if (i < 3) {

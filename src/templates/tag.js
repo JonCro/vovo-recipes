@@ -47,7 +47,7 @@ const tags = (props) => {
     <Layout>
       <Head title={`Recipes - ${data.type}`} recipe={true} />
       <h1>Recipes - {data.type}</h1>
-      <ol className={recipesStyles.recipes}>
+      <ol className={recipesStyles.cardList}>
         {data.recipes.map(recipe =>  
         (
           <Card 

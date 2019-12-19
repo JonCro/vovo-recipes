@@ -40,7 +40,7 @@ const RecipesPage = () => {
     <Layout>
       <Head title={`Recipes`} recipe={true} />
       <h1>Recipes</h1>
-      <ol className={recipesStyles.recipes}>
+      <ol className={recipesStyles.cardList}>
           {data.allContentfulRecipes.edges.map(post => 
           (
             <Card 
