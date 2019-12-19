@@ -1,9 +1,10 @@
 import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
 import recipesStyles from './recipes.module.scss';
-import Head from '../components/head'
+import Head from '../components/head';
+import Card from '../components/card';
 
 const RecipesPage = () => {
   const data = useStaticQuery(graphql`
@@ -32,8 +33,8 @@ const RecipesPage = () => {
   `)
 
   
-  console.log('recipes page')
-  console.log(data)
+  // console.log('recipes page')
+  // console.log(data)
 
   return (
     <Layout>
@@ -42,17 +43,14 @@ const RecipesPage = () => {
       <ol className={recipesStyles.recipes}>
           {data.allContentfulRecipes.edges.map(post => 
           (
-            <li className={recipesStyles.card} key={post.node.contentful_id}>
-              <Link to={`/recipes/${post.node.slug}`}>
-                {post.node.image !== null ? <img src={post.node.image.file.url} alt="" /> : <p>no image</p>}
-                <h2>{post.node.title}</h2>
-                <div className={recipesStyles.cardMeta}>
-                  <div>{post.node.tags.map(tag => 
-                  <span className={recipesStyles.tags} key={tag}>{tag} </span>
-                  )}</div>
-                </div>
-              </Link>
-            </li>
+            <Card 
+              image={post.node.image}
+              title={post.node.title} 
+              tags={post.node.tags}
+              slug={post.node.slug}
+              id={post.node.contentful_id}
+              path={`recipes`}
+            />
           ))}
         </ol>
     </Layout>
