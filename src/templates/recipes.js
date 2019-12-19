@@ -55,9 +55,12 @@ const Recipes = (props) => {
           )
         })}
       </div>
-      <h3>Ingredients</h3>
+      <h2>Ingredients</h2>
       <div>{documentToReactComponents(data.ingredients.json)}</div>
-      <h3>Instructions</h3>
+      <br />
+      <hr />
+      <br />
+      <h2>Instructions</h2>
       <div>{documentToReactComponents(data.instructions.json)}</div>
     </Layout>
   )
