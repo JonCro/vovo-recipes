@@ -54,6 +54,7 @@ const IndexPage = (props) => {
                       tags={recipe.node.tags}
                       slug={recipe.node.slug}
                       id={recipe.node.contentful_id}
+                      path={`recipes`}
                       />
                   )
                 } return null

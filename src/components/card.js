@@ -8,11 +8,12 @@ const Card = ({
   title,
   tags,
   slug,
-  id
+  id,
+  path
   }) => {
     return (
       <li className={recipesStyles.card}>
-        <Link to={`/recipes/${slug}`}>
+        <Link to={`/${path}/${slug}`}>
           {image !== null ? <img src={image.file.url} alt="" /> : <p>no image</p>}
           <h2>{title}</h2>
           <div className={recipesStyles.cardMeta}>
