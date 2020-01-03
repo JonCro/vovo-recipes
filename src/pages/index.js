@@ -42,6 +42,10 @@ const IndexPage = (props) => {
       <div>
         <h1 className={indexStyles.tagline}>Meals to feed your family for generations</h1>
         <section>
+          <h3>Vovo's Favorites</h3>
+          
+        </section>
+        <section>
           <h3>Most Recent Recipes</h3>
           <ol className={recipesStyles.cardList}>
             {
