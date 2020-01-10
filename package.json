@@ -1,12 +1,12 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "vovos-family-recipes",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A web app to share Vovo's recipes",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd -f .env gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -31,12 +31,5 @@
   "devDependencies": {
     "env-cmd": "^10.0.1",
     "prettier": "^1.19.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
