@@ -4,6 +4,8 @@
 
 An app that shares my grandmothers recipes using Gatsby and Contentful.
 
+[check out the live project here](https://tender-sammet-273ddb.netlify.com/)
+
 
 ## 🚀 Quick start
 
