@@ -1,9 +1,8 @@
 .card-list {
   list-style-type: none;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
 }
 
 .meta {

@@ -40,7 +40,7 @@ const IndexPage = (props) => {
     <Layout>
       <Head title="Home" />
       <div>
-        <h1 className={indexStyles.tagline}>Meals to feed your family for generations</h1>
+        {/* <h1 className={indexStyles.tagline}>Meals to feed your family for generations</h1> */}
         <section>
           <h3>Vovo's Favorites</h3>
           
