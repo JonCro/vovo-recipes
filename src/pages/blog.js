@@ -1,24 +1,19 @@
-import React from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import React from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
-import Layout from '../components/layout';
-import blogStyles from './recipe.module.scss';
-import Head from '../components/head'
+import Layout from "../components/layout"
+import blogStyles from "./recipe.module.scss"
+import Head from "../components/head"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost (
-        sort: {
-          fields:publishedDate,
-          order:DESC
-        }
-      ){
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
-            title,
-            slug,
-            publishedDate(formatString:"MMMM Do, YYYY"),
+            title
+            slug
+            publishedDate(formatString: "MMMM Do, YYYY")
             contentful_id
           }
         }
@@ -46,4 +41,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage;
+export default BlogPage

@@ -1,25 +1,20 @@
-import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import React from "react"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
-import menuStyles from './submenu.module.scss';
+import menuStyles from "./submenu.module.scss"
 
 const SubMenu = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulCategories (
-        sort: {
-          fields: slug,
-          order: ASC
-        }
-      ) {
-        edges{
+      allContentfulCategories(sort: { fields: slug, order: ASC }) {
+        edges {
           node {
-            type,
-            slug,
+            type
+            slug
             recipes {
-              title,
+              title
               slug
-            },
+            }
             contentful_id
           }
         }
@@ -34,8 +29,13 @@ const SubMenu = () => {
         <ul className={menuStyles.categoriesList}>
           {data.allContentfulCategories.edges.map(tags => {
             return (
-              <Link to={`/recipes/tags/${tags.node.slug}`} key={tags.node.contentful_id}><li>{tags.node.type}</li></Link>
-            ) 
+              <Link
+                to={`/recipes/tags/${tags.node.slug}`}
+                key={tags.node.contentful_id}
+              >
+                <li>{tags.node.type}</li>
+              </Link>
+            )
           })}
         </ul>
       </div>
@@ -43,4 +43,4 @@ const SubMenu = () => {
   )
 }
 
-export default SubMenu;
+export default SubMenu

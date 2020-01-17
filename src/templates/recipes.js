@@ -1,32 +1,27 @@
-import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import React from "react"
+import { graphql, Link } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import Layout from '../components/layout';
-import recipeStyles from '../pages/recipe.module.scss';
-import Head from '../components/head';
+import Layout from "../components/layout"
+import recipeStyles from "../pages/recipe.module.scss"
+import Head from "../components/head"
 
 export const query = graphql`
-  query ($slug: String!) {
-    contentfulRecipes (
-        slug: {
-          eq: $slug
-        }
-    ) 
-    {
-      title,
-      tags,
+  query($slug: String!) {
+    contentfulRecipes(slug: { eq: $slug }) {
+      title
+      tags
       categories {
-        type,
-        slug,
+        type
+        slug
         contentful_id
-      },
+      }
       ingredients {
         json
-      },
+      }
       instructions {
         json
-      },
+      }
       image {
         file {
           url
@@ -36,22 +31,28 @@ export const query = graphql`
   }
 `
 
-const Recipes = (props) => {
+const Recipes = props => {
   console.log(props)
-  const data = props.data.contentfulRecipes;
+  const data = props.data.contentfulRecipes
   // console.log('recipes template')
   // console.log(data)
   return (
     <Layout>
       <Head title={`${data.title}`} recipe={true} />
       <h1>{data.title}</h1>
-      {data.image !== null ? <img src={data.image.file.url} alt="" /> : <p>no image</p>}
+      {data.image !== null ? (
+        <img src={data.image.file.url} alt="" />
+      ) : (
+        <p>no image</p>
+      )}
       <div className={recipeStyles.meta}>
         <span className={recipeStyles.tags}>tags</span>
         {data.categories.map((data, i) => {
-          console.log(data);
+          console.log(data)
           return (
-            <Link to={`/recipes/tags/${data.slug}`} key={data.contentful_id}><span className={recipeStyles.tag}>{data.type}</span></Link>
+            <Link to={`/recipes/tags/${data.slug}`} key={data.contentful_id}>
+              <span className={recipeStyles.tag}>{data.type}</span>
+            </Link>
           )
         })}
       </div>
